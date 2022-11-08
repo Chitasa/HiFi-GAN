@@ -3,7 +3,7 @@ matplotlib
 numpy
 scipy
 tensorboardX
-torch
+torch=1.10.0
 tqdm
 pillow
 pyyaml
