@@ -18,4 +18,4 @@ unzip mels.zip
 rm wavs.zip
 rm mels.zip
 
-wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1m5VbIwOU01N8UGUg3gqlxbRbvk2_T8Wh' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1m5VbIwOU01N8UGUg3gqlxbRbvk2_T8Wh" -O zhongli_training && rm -rf /tmp/cookies.txt
+wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1QzkwlazNK0Ik6j8gZSzTqZcJeIFs135a' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1QzkwlazNK0Ik6j8gZSzTqZcJeIFs135a" -O zhongli_training && rm -rf /tmp/cookies.txt
