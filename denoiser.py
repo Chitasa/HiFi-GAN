@@ -22,7 +22,7 @@ class Denoiser(torch.nn.Module):
             raise Exception("Mode {} if not supported".format(mode))
 
         with torch.no_grad():
-            bias_audio = melgan.inference(mel_input).float() # [B, 1, T]
+            bias_audio = melgan(mel_input).float() # [B, 1, T]
 
             bias_spec, _ = self.stft.transform(bias_audio.squeeze(0))
 

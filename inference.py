@@ -1,3 +1,4 @@
+import pickle
 import os
 import glob
 import tqdm
@@ -23,11 +24,14 @@ def main(args):
     model.load_state_dict(checkpoint['model_g'])
     model.eval()
 
+    with open(args.input, "rb") as f:
+        mel = pickle.load(f)
+
     with torch.no_grad():
-        mel = torch.from_numpy(np.load(args.input))
-        if len(mel.shape) == 2:
-            mel = mel.unsqueeze(0)
-        mel = mel.cuda()
+        # mel = torch.from_numpy(np.load(args.input))
+        # if len(mel.shape) == 2:
+        #     mel = mel.unsqueeze(0)
+        # mel = mel.cuda()
         audio = model(mel)
         # For multi-band inference
         print(audio.shape)
@@ -52,8 +56,8 @@ if __name__ == '__main__':
                         help="yaml file for config. will use hp_str from checkpoint if not given.")
     parser.add_argument('-p', '--checkpoint_path', type=str, required=True,
                         help="path of checkpoint pt file for evaluation")
-    parser.add_argument('-i', '--input', type=str, required=True,
-                        help="directory of mel-spectrograms to invert into raw audio. ")
+    parser.add_argument('-f', '--input', type=str, required=True,
+                        help="directory of pickle files to invert into raw audio. ")
     parser.add_argument('-d', action='store_true', help="denoising ")
     args = parser.parse_args()
 
