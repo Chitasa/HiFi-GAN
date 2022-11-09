@@ -21,14 +21,14 @@ def main(args):
     model = Generator(hp.audio.n_mel_channels).cuda()
 
     model.load_state_dict(checkpoint['model_g'])
-    model.eval(inference=True)
+    model.eval()
 
     with torch.no_grad():
         mel = torch.from_numpy(np.load(args.input))
         if len(mel.shape) == 2:
             mel = mel.unsqueeze(0)
         mel = mel.cuda()
-        audio = model.inference(mel)
+        audio = model(mel)
         # For multi-band inference
         print(audio.shape)
         audio = audio.squeeze(0)  # collapse all dimension except time axis
