@@ -1,0 +1,1 @@
+python3.6 trainer.py -c configs/default.yaml -p zhongli_training -n zhongli
