@@ -9,13 +9,12 @@ sudo apt-get install libsndfile1-dev
 # cd HiFi-GAN
 python3.6 -m pip install -r requirements.txt
 
-wget --content-disposition https://b.catgirlsare.sexy/ZLBcq5NYKaZu.zip
-wget --content-disposition https://b.catgirlsare.sexy/yYoskWRNM3Lz.zip
-
+wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1nCrOBI8my-yjFeGXMR2bbeaNvPHEIbgT' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1nCrOBI8my-yjFeGXMR2bbeaNvPHEIbgT" -O wavs.zip && rm -rf /tmp/cookies.txt
 unzip wavs.zip
-unzip mels.zip
-
 rm wavs.zip
+
+wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1EkoJbYLJ4Z1D3x0QUZ6qsClyWXNO-R8M' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1EkoJbYLJ4Z1D3x0QUZ6qsClyWXNO-R8M" -O mels.zip && rm -rf /tmp/cookies.txt
+unzip mels.zip
 rm mels.zip
 
 wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1QzkwlazNK0Ik6j8gZSzTqZcJeIFs135a' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1QzkwlazNK0Ik6j8gZSzTqZcJeIFs135a" -O zhongli_training && rm -rf /tmp/cookies.txt
